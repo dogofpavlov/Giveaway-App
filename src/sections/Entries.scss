@@ -1,0 +1,85 @@
+
+.entries{
+    .dataTable{
+        overflow: visible;
+    }
+    .dataTableHeader{
+        border-radius:8px;
+        position:sticky;
+        top:0;
+        z-index:4;
+        
+        .col{
+            border-right:1px dotted rgba(0,0,0,0.2);
+            &:last-child{
+                border-right:0;
+            }
+            &.prize{
+                height:56px;
+                padding:0;
+                position:relative;
+                cursor: pointer;
+                &:hover{
+                    .prizeLabel{
+                        transform:scale(1.5,1.5) rotate(-60deg);
+                    }
+                }
+                .prizeLabel{
+                    transition:all 0.3s ease-out;
+                    background-color:#FFF;
+                    border-radius: 5px;
+                    position:absolute;
+                    bottom:0px;
+                    left:0;
+                    font-size:14px;
+                    transform-origin: 0 0;
+                    transform: rotate(-40deg);
+                    white-space: nowrap;
+                    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+                    padding:4px;
+                    user-select: none;
+                }
+            }
+        }
+    }
+    .dataTableContent{
+        position:relative;
+        z-index:3;
+    }
+    .entryItem{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        border-bottom:1px dotted rgba(255, 228, 0, 0.3);
+        position:relative;
+        .col{
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px dotted rgba(255,255,255,0.5);
+            &.Name{
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-size:14px;
+                height:56px;
+                padding:0 0 0 5px;
+                justify-content: flex-start;
+
+            }
+            &.prize{
+                padding:0;
+                height:56px;
+                cursor: pointer;
+            }
+            input{
+                width:20px;
+                height:20px;
+                background-color:#FFF;
+            }
+        }
+        .btn{
+            
+        }
+    }
+}

@@ -1,0 +1,109 @@
+@import './vars';
+.chooseWinner{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:20;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-out;
+
+    background-color:rgba(0,0,0,0.7);
+
+    &.show{
+        opacity:1;
+        pointer-events: auto;
+        .container{
+            opacity:1;
+            transform:translate(-50%,-50%) scale(1,1);
+        }
+    }
+    .container{
+        background-color:rgba(0,0,0,0.95);
+        border-radius:10px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        width:98%;
+        height:98%;
+        opacity:0;
+        transform:translate(-50%,-50%) scale(0.8,0.8);
+        border:1.5px solid #ffe400;
+        display:flex;
+        flex-direction: column;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition-delay: 0.1s;
+        
+        .chooseHeader{
+            flex-shrink: 0;
+            background-color:$colorYellow;
+            color:#000;
+            padding:10px;
+            font-size:20px;
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            .headerStatus{
+                flex-grow: 1;
+                span{
+                    font-weight:700;
+                }
+            }
+            .btn{
+                background-color:$colorGreen;
+                color:#FFF;
+                flex-shrink: 0;
+
+                font-weight: 400;
+            }
+        }
+        .chooseEntries{
+            flex-grow:1;
+            overflow: auto;
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: center;
+            align-content: flex-start;
+            padding:10px;
+
+            .entryItem{
+                .inside{
+                    transition:transform 0.2s ease-out;
+                    background-color:#000;
+                    border:1px dotted rgba($colorYellow,0.5);
+                    display:inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    height:30px;
+                    font-size:12px;
+                    padding:4px;
+
+                }
+                display:inline-flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                
+                
+                &.selected{
+                    .inside{
+                        border:1px solid rgba($colorGreen,1);
+                        background-color:$colorGreen;
+                        color:#FFF;
+                        transform:scale(2,2);
+
+                    }
+                }
+
+            }
+        }
+
+    }
+}

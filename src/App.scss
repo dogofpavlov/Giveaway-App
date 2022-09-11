@@ -1,0 +1,77 @@
+@import './vars';
+.app{
+    display:flex;
+    flex-direction: column;
+    position:relative;
+    .header{
+        flex-shrink: 0;
+        position:relative;
+        z-index:4;
+    }
+    .nav{
+        position:relative;
+        z-index:5;
+        flex-shrink: 0;
+    }
+    .content{
+        position:relative;
+        z-index:6;
+        flex-grow:1;
+        background-color:#2a0908;
+
+    }
+}
+
+input{
+    height:40px;
+    &::-webkit-file-upload-button{
+        visibility: hidden;
+    }
+}
+input::-webkit-file-upload-button{
+    visibility: hidden;
+}
+
+.btn{
+    height:40px;
+    background-color:$colorYellow;
+    border-radius: 6px;
+    padding:10px;
+    color:#000;
+    font-weight: 600;
+    cursor: pointer;
+    display:inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    border:1px solid rgba(0,0,0,0.2);
+    text-transform: uppercase;
+    &.red{
+        background-color:$colorRed;
+        color:#FFF;
+    }
+    &.green{
+        background-color:$colorGreen;
+        color:#FFF;
+    }
+}
+
+
+.dataTable{
+    border:1px solid $colorYellow;
+    border-radius:10px;
+    overflow: hidden;
+    .col{
+        padding:20px;
+    }
+    .dataTableHeader{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        background-color:$colorYellow;
+        color:#000;
+        
+    }
+}
