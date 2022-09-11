@@ -1,3 +1,6 @@
+This was a simple app written to help make keeping track of giveaways a bit easier. Don't judge my code this was written in a few hours. :P
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
